@@ -1,6 +1,6 @@
-# X for ship position and hit 
-# '' avalible space
-# "*" miss ship
+# hidding board = computer_board
+# guess board = player_board
+# letters_to_numbers = letters_field
 
 
 from random import randint
@@ -34,63 +34,69 @@ def start_game():
     """
     Function that start game.
     """
-    call_board(player_board)
-    call_ships(player_board)
-    call_ships_location()
-    count_ships_hits(board)
+    computer_board = [[' '] * 8 for x in range(8)]
+    player_board = [[' '] * 8 for x in range(8)]
+
+    letters_field = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H':7}
+
+    def print_board(board):
+        print('  A B C D E F G H')
+        print('  ---------------')
+        row_number = 1
+        for row in board:
+            print('%d|%s|' % (row_number, '|'.join(row)))
+            row_number += 1
+
+    def create_ships(board):
+        for ship in range(5):
+            ship_row, ship_column = randint(0,7), randint(0,7)
+            while board[ship_row][ship_column] == 'X':
+                ship_row, ship_column = randint(0,7), randint(0,7)
+            board[ship_row][ship_column] = 'X'  
 
 
+    def get_ship_location():
+        row = input('please enter a ship row 1-8: ')
+        while row not in '12345678':
+            print('please enter valid row')
+            row = input('please enter a ship row 1-8: ')
+        column = input ('please enter column from a - h').upper()
+        while column not in 'ABCDEFGH':
+            print('enter valid column')
+            column = input ('please enter column from a - h').upper()
+        return int(row) - 1, letters_field[column]
 
-player_board = [[' '] * 8 for x in range(8)]
+    def count_hit_ships(board):
+        count = 0
+        for row in board:
+            for column in row:
+                if column == 'X':
+                    count += 1
+        return count        
 
-computer_board = [[' ']* 8 for x in range(8)]
-
-field_letters = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'H': 4, 'L': 5, 'D': 6, 'H':7}
-
-
-
-
-def call_board(board):
-    """
-    Function to call game board
-    """
-    print('  A B C D E F G H')
-    print('  ---------------')
-    row_num = 1
-    for row in board:
-        print("%d|%s|" % (row_num, "|".join(row)))
-        row_num += 1
-
-def call_ships(board):
-    """
-    Function to call game Ships
-    """    
-    for ship in range(5):
-        ship_row = randint(0, 7)
-        ship_column = randint(0, 7)
-        while board[ship_row][ship_column] == 'X':
-            ship_row = randint(0, 7)
-            ship_column = randint(0, 7)
-        board[ship_row][ship_column] = 'X'  
-
-
-def call_ships_location():
-    """
-    Function to call ships locations
-    """
-    
-
-def count_ships_hits(board):
-    """
-    Function to count ships hits
-    """
-    count = 0
-    for row in board:
-        for column in row:
-            if column == 'X':
-                count += 1
-    return count            
-
+    create_ships(computer_board)
+    turns = 3
+    while turns > 0:
+        print('welcome to battleship')
+        print_board(player_board)
+        row,column = get_ship_location()
+        if player_board[row][column] == '-':
+            print('you already guessed that')
+        elif player_board[row][column] == 'X':
+            print('congratulations u hit the shit')
+            player_board[row][column] = 'X'  
+            turns -= 1
+        else:
+            print('missed')
+            player_board[row][column] = '-'
+            turns -= 1
+        if count_hit_ships(player_board) == 5:
+            print('sunk alles')
+            break
+        print(f'you have {turns} remaning')
+        if turns == 0:
+            print('gameOver')
+            break   
 
 def intructions():
     """
