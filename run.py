@@ -34,7 +34,10 @@ def start_game():
     """
     Function that start game.
     """
-    
+    call_board(player_board)
+    call_ships(player_board)
+    call_ships_location()
+    count_ships_hits(board)
 
 
 
@@ -75,25 +78,19 @@ def call_ships_location():
     """
     Function to call ships locations
     """
-    column_check = ['A','B','C','D','E','F','G','H']
-    row_check = [1,2,3,4,5,6,7,8]
-    row = input('Please enter row from 1 - 8')
-    if row not in row_check:
-        raise ValueError(
-            f"Needs to be an value between 1-8 you provided {row}")    
-        return row 
-    column = input("Please enter a column from A-H").upper()
-    if column not in column_check:
-        raise ValueError(
-            f"Needs to be an value between 1-8 you provided {column}")    
-        return column 
+    
 
+def count_ships_hits(board):
+    """
+    Function to count ships hits
+    """
+    count = 0
+    for row in board:
+        for column in row:
+            if column == 'X':
+                count += 1
+    return count            
 
-def call_ships_hits():
-    """
-    Function to call ships hits
-    """
-    pass
 
 def intructions():
     """
