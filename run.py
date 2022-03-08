@@ -75,14 +75,19 @@ def call_ships_location():
     """
     Function to call ships locations
     """
+    column_check = ['A','B','C','D','E','F','G','H']
     row_check = [1,2,3,4,5,6,7,8]
-    row = input('Please enter row from 1 - 8').upper()
+    row = input('Please enter row from 1 - 8')
     if row not in row_check:
         raise ValueError(
             f"Needs to be an value between 1-8 you provided {row}")    
         return row 
+    column = input("Please enter a column from A-H").upper()
+    if column not in column_check:
+        raise ValueError(
+            f"Needs to be an value between 1-8 you provided {column}")    
+        return column 
 
-    
 
 def call_ships_hits():
     """
