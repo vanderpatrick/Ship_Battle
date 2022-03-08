@@ -27,8 +27,41 @@ def start_game():
     """
     Function that start game.
     """
-    print('game started')
 
+    
+
+
+
+player_board = [[' '] * 8 for x in range(8)]
+
+computer_board = [[' ']* 8 for x in range(8)]
+
+field_letters = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'H': 4, 'L': 5, 'D': 6, 'H':7}
+
+
+def call_board():
+    """
+    Function to call game board
+    """
+    pass
+
+def call_ships():
+    """
+    Function to call game Ships
+    """    
+    pass
+
+
+def call_ships_location():
+    """
+    Function to call ships locations
+    """
+    pass
+
+def call_ships_hits():
+    """
+    Function to call ships hits
+    """
 
 def intructions():
     """
