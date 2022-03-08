@@ -1,3 +1,10 @@
+# X for ship position and hit 
+# '' avalible space
+# "*" miss ship
+
+
+from random import randint
+
 def get_user_input():
     """
     gets user input to choose between 3 menu options
@@ -27,7 +34,6 @@ def start_game():
     """
     Function that start game.
     """
-
     
 
 
@@ -39,29 +45,50 @@ computer_board = [[' ']* 8 for x in range(8)]
 field_letters = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'H': 4, 'L': 5, 'D': 6, 'H':7}
 
 
-def call_board():
+
+
+def call_board(board):
     """
     Function to call game board
     """
-    pass
+    print('  A B C D E F G H')
+    print('  ---------------')
+    row_num = 1
+    for row in board:
+        print("%d|%s|" % (row_num, "|".join(row)))
+        row_num += 1
 
-def call_ships():
+def call_ships(board):
     """
     Function to call game Ships
     """    
-    pass
+    for ship in range(5):
+        ship_row = randint(0, 7)
+        ship_column = randint(0, 7)
+        while board[ship_row][ship_column] == 'X':
+            ship_row = randint(0, 7)
+            ship_column = randint(0, 7)
+        board[ship_row][ship_column] = 'X'  
 
 
 def call_ships_location():
     """
     Function to call ships locations
     """
-    pass
+    row_check = [1,2,3,4,5,6,7,8]
+    row = input('Please enter row from 1 - 8').upper()
+    if row not in row_check:
+        raise ValueError(
+            f"Needs to be an value between 1-8 you provided {row}")    
+        return row 
+
+    
 
 def call_ships_hits():
     """
     Function to call ships hits
     """
+    pass
 
 def intructions():
     """
