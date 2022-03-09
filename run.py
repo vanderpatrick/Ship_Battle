@@ -8,6 +8,7 @@ def get_user_name():
     player = input("Welcome to ShipBattle what is your name soldier ?: ")
     return player
 
+
 def get_user_input():
     """
     gets user input to choose between 3 menu options
@@ -37,7 +38,16 @@ def start_game():
     """
     Function that start game.
     """
-    
+    call_ships(computer_field)
+    call_board(computer_field)
+    call_board(player_field)
+    call_ships(player_field)
+    ship_size = [2, 3, 3, 4, 5]
+    player_field = [[" "] * 8 for i in range(8)]
+    computer_field = [[" "] * 8 for i in range(8)]
+    player_guess = [[" "] * 8 for i in range(8)]
+    computer_guess = [[" "] * 8 for i in range(8)]
+    letters_translation = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7}
 
 
 def intructions():
