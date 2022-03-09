@@ -1,8 +1,3 @@
-# hidding board = computer_board
-# guess board = player_board
-# letters_to_numbers = letters_field
-
-
 from random import randint
 
 def get_user_input():
@@ -34,8 +29,12 @@ def start_game():
     """
     Function that start game.
     """
-    computer_board = [[' '] * 8 for x in range(8)]
-    player_board = [[' '] * 8 for x in range(8)]
+    ships_size = [2,3,3,4,5]
+
+    player_place_board = [[' '] * 8 for x in range(8)]
+    player_guess =[[' '] * 8 for x in range(8)]
+    computer__place_board = [[' '] * 8 for x in range(8)]
+    computer_guess = [[' '] * 8 for x in range(8)]
 
     letters_field = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H':7}
 
@@ -74,23 +73,23 @@ def start_game():
                     count += 1
         return count        
 
-    create_ships(computer_board)
+    create_ships(computer__place_board)
     turns = 3
     while turns > 0:
         print('welcome to battleship')
-        print_board(player_board)
+        print_board(player_place_board)
         row,column = get_ship_location()
-        if player_board[row][column] == '-':
+        if player_place_board[row][column] == '-':
             print('you already guessed that')
-        elif player_board[row][column] == 'X':
+        elif player_place_board[row][column] == 'X':
             print('congratulations u hit the shit')
-            player_board[row][column] = 'X'  
+            player_place_board[row][column] = 'X'  
             turns -= 1
         else:
             print('missed')
-            player_board[row][column] = '-'
+            player_place_board[row][column] = '-'
             turns -= 1
-        if count_hit_ships(player_board) == 5:
+        if count_hit_ships(player_place_board) == 5:
             print('sunk alles')
             break
         print(f'you have {turns} remaning')
