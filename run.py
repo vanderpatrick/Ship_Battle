@@ -1,5 +1,6 @@
 from random import randint
 
+
 def get_user_input():
     """
     gets user input to choose between 3 menu options
@@ -17,26 +18,22 @@ def input_validation(user_input):
     """
     This function validates whether the user input is an integer or not
     """
-    valid_options = [1,2,3]
+    valid_options = [1, 2, 3]
     parsed = int(user_input)
     if parsed not in valid_options:
         raise ValueError(
-            f"Needs to be an value between 1, 2 or 3 you provided {user_input}"
-        )    
+            f"provide value between 1, 2 or 3 you provided{user_input}")
     return parsed
+
 
 def start_game():
     """
     Function that start game.
     """
-    ships_size = [2,3,3,4,5]
-
     player_place_board = [[' '] * 8 for x in range(8)]
-    player_guess =[[' '] * 8 for x in range(8)]
     computer__place_board = [[' '] * 8 for x in range(8)]
-    computer_guess = [[' '] * 8 for x in range(8)]
 
-    letters_field = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H':7}
+    letters_field = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7}
 
     def print_board(board):
         print('  A B C D E F G H')
@@ -48,21 +45,20 @@ def start_game():
 
     def create_ships(board):
         for ship in range(5):
-            ship_row, ship_column = randint(0,7), randint(0,7)
+            ship_row, ship_column = randint(0, 7), randint(0, 7)
             while board[ship_row][ship_column] == 'X':
-                ship_row, ship_column = randint(0,7), randint(0,7)
-            board[ship_row][ship_column] = 'X'  
-
+                ship_row, ship_column = randint(0, 7), randint(0, 7)
+            board[ship_row][ship_column] = 'X'
 
     def get_ship_location():
         row = input('please enter a ship row 1-8: ')
         while row not in '12345678':
             print('please enter valid row')
             row = input('please enter a ship row 1-8: ')
-        column = input ('please enter column from a - h').upper()
+        column = input('please enter column from a - h').upper()
         while column not in 'ABCDEFGH':
             print('enter valid column')
-            column = input ('please enter column from a - h').upper()
+            column = input('please enter column from a - h').upper()
         return int(row) - 1, letters_field[column]
 
     def count_hit_ships(board):
@@ -71,19 +67,19 @@ def start_game():
             for column in row:
                 if column == 'X':
                     count += 1
-        return count        
+        return count
 
     create_ships(computer__place_board)
     turns = 3
     while turns > 0:
         print('welcome to battleship')
         print_board(player_place_board)
-        row,column = get_ship_location()
+        row, column = get_ship_location()
         if player_place_board[row][column] == '-':
             print('you already guessed that')
         elif player_place_board[row][column] == 'X':
             print('congratulations u hit the shit')
-            player_place_board[row][column] = 'X'  
+            player_place_board[row][column] = 'X'
             turns -= 1
         else:
             print('missed')
@@ -95,7 +91,8 @@ def start_game():
         print(f'you have {turns} remaning')
         if turns == 0:
             print('gameOver')
-            break   
+            break
+
 
 def intructions():
     """
@@ -126,6 +123,7 @@ def credits_for_user():
     if user_input == 2:
         return start_game()
 
+
 def main():
     """
     function to call all functions
@@ -142,5 +140,6 @@ def main():
         return intructions()
     if user_input == 3:
         return credits()
+
 
 main()
