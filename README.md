@@ -1,31 +1,77 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome vanderpatrick,
+# Ship Battle
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+## By Patrick Alexander Lucas Van Der Flier
 
-## Reminders
+### [Check Ship Battle]()
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+![Responsive image from the project]()
 
-## Creating the Heroku app
+# Ship Battle :
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+### Ship Battle was developed as my first python project by me as my third Full Stack Web Development project with Code Institute.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+# Reason :
+Since Python is a very interesting langues easy to use, and ubelibel annoing when it comes to indentations and semi-columns, i've thought a battleship game would be the perfect choice. As a child i always loved video games so i felt afinity regarding to this project, just an amazing experience  
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+# Battleships
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+## Is a strategy type guessing game for two players. It is played on ruled grids (paper or board) on which each player's fleet of warships are marked. The locations of the fleets are concealed from the other player. Players alternate turns calling "shots" at the other player's ships, and the objective of the game is to destroy the opposing player's fleet.
 
-Connect your GitHub repository and deploy as normal.
+# How to play : 
 
-## Constraints
+## Ship Battle is based on the original version of battleship game. This terminal version the user can place 5 differents ships verticaly and horizontaly with size of 2, 3, 4, 5 while the computer generates a random position on his board, the objective is to hit all 5 enemy ships
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+# Features :
 
------
-Happy coding!
+The Features were designed to be as simple as possible since is a terminal game you dont need much to play
+
+- User name :
+    - lets the player freely chose a username of his choice. 
+    ![Photo from user name in game]()
+
+- Main menu :
+    - allow the user to chose beteween 3 menu options to start the game, read instructions and see credtis.
+    ![Photo from main menu]()
+
+- instructions :
+    - explains the player how to play the battleships game.
+    - Allows the player to start the game or return to main menu.
+    ![Photo from instructions]()
+
+- Ships placement :
+    - Allows the user to place 5 ships with different sizes vertically and horizontally.
+    - Checks the overlap of the ships, so you cant place a ship of the map.
+    - Computer randomly places enemy ships. 
+ ![Ships placement photo](/assets/images/navbar.png)
+
+- Hit/Miss check :
+    - Checks if your attack succesfuly hited a ship or the whater
+![landing page image](/assets/images/home_screen.png)
+
+- Calling shots :
+  - The player may chosse a vertical or horizontal ortientation and a number from 1 - 8 to call his shot.
+  - Computer does the same by itself.
+
+# Testing :
+  - Passed the code trhough PEP8 and only got line size issues nothing that compromises the game or the code flow.
+  - Used alot of print statements to test every main function of the game.
+  - Type error value error and key error were used to check if the expect input was acctually the right input.
+
+ # Test Validators :
+  - Passed trhough PEP8 validation, with 3 line size issues, that comes beacuse of indentation inside the start game function
+
+# Deployment :
+  
+
+  # Credits :
+ 
+
+  ## Special thanks 
+  I would like to thank everyone who helped me with this project.
+
+- My mentor.
+- My good friend Armandinho.
+- My best glass friend Michael.
+- Jean my good French friend for all the support and advice.
+- Code Institute for giving the best support to develop this project.
