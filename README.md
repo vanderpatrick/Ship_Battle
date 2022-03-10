@@ -66,7 +66,8 @@ The Features were designed to be as simple as possible since is a terminal game 
 
   # Credits :
   - https://pythondex.com/python-battleship-game - for helping me understand the logic of a battleship game in python
-  - https://www.youtube.com/c/KnowledgeMavens1 - for being a stepping stone to build the player vs computer version of this project 
+
+  - https://www.youtube.com/c/KnowledgeMavens1 - for being a stepping stone to build this project
  
 # Observations :
   ## I have a bad practice that is good to mention, to avoid unnecessary commits I like to code every major part in the Visual studio code so I don't need to commit a lot of things, I thought this was a very good idea at first, but this pushes a lot of inconsistency in my commits.
