@@ -232,7 +232,8 @@ def start_game():
             turns(player_guess)
             break
         if count_hits(player_guess) == 17:
-            print("Good Work soldier they are all dead, i see you in the next battle.")
+            print("Good Work soldier.")
+            print("theyare all dead, i see you in the next battle.")
             return main()
 
         while True:
@@ -264,7 +265,8 @@ def credits_for_user():
     """
     function that shows user the credits
     """
-    print('It was just awesome to make this project, i hope you liked the game.\n')
+    print('It was just awesome to make this project')
+    print('I hope you liked the game.\n')
     print('made by Patrick Alexander Lucas Van Der Flier\n')
     print('1.Start Game')
     print('2.Instructions \n')
