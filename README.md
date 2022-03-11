@@ -3,9 +3,9 @@
 
 ## By Patrick Alexander Lucas Van Der Flier
 
-### [Check Ship Battle]()
+### [Check Ship Battle](https://ship--battle.herokuapp.com/)
 
-![Responsive image from the project]()
+![Responsive image from the project](/images/responsive.png)
 
 # Ship Battle :
 
