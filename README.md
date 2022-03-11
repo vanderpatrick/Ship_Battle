@@ -28,26 +28,26 @@ The Features were designed to be as simple as possible since is a terminal game 
 
 - User name :
     - lets the player freely choose a username of his choice. 
-    ![Photo from a user name in game]()
+    ![Photo from a user name in game](/images/user_name.png)
 
 - Main menu :
     - allow the user to choose between 3 menu options to start the game, read instructions and see credits.
-    ![Photo from the main menu]()
+    ![Photo from the main menu](/images/menu.png)
 
 - instructions :
     - explains to the player how to play the battleships game.
     - Allows the player to start the game or return to the main menu.
-    ![Photo from instructions]()
+    ![Photo from instructions](/images/instructions.png)
 
 - Ships placement :
     - Allows the user to place 5 ships of different sizes vertically and horizontally.
     - Checks the overlap of the ships, so you cant place a ship on the map.
     - Computer randomly places enemy ships. 
- ![Ships placement photo](/assets/images/navbar.png)
+ ![Ships placement photo](/images/ship_placement.png)
 
 - Hit/Miss check :
     - Checks if your attack successfully hits a ship or the water
-![landing page image](/assets/images/home_screen.png)
+![landing page image](/images/hits.png)
 
 - Calling shots :
   - The player may choose a vertical or horizontal orientation and a number from 1 - 8 to call his shot.
@@ -59,7 +59,8 @@ The Features were designed to be as simple as possible since is a terminal game 
   - Type error value error and key error were used to check if the expected input was the right input.
 
  # Test Validators :
-  - Passed through PEP8 validation, with 3 line size issues, that comes because of indentation inside the start game function
+  - Passed through PEP8 validation whitout any issues
+  ![Image of PEP8 validation](/images/pep_8_foto.png)
 
 # Deployment :
   
