@@ -63,7 +63,17 @@ The Features were designed to be as simple as possible since is a terminal game 
   ![Image of PEP8 validation](/images/pep_8_foto.png)
 
 # Deployment :
-  
+  - This project was deployd to Heroku follow the steps bellow to deploy.
+  - 1.Create an Heroku account
+  - 2.Click on create new app
+  - 3.Give the app an name of your chosing
+  - 4.Pick your region.
+  - 5.configure the settings the way it fits for your project
+  - 6.pick a deployment method.
+  - 7.look for your repository name
+  - 8.Click search and click connect
+  - 9.pick between manual or automatic deployment
+  - 10.click on link to see your project link
 
   # Credits :
   - https://pythondex.com/python-battleship-game - for helping me understand the logic of a battleship game in python
