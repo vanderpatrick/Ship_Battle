@@ -234,9 +234,9 @@ def intructions():
     print("2.Credits \n")
     user_input = get_user_input()
     if user_input == 1:
-        return credits_for_user()
-    if user_input == 2:
         return start_game()
+    if user_input == 2:
+        return credits_for_user()
 
 
 def credits_for_user():
@@ -248,16 +248,16 @@ def credits_for_user():
     print('2.Instructions \n')
     user_input = get_user_input()
     if user_input == 1:
-        return intructions()
-    if user_input == 2:
         return start_game()
+    if user_input == 2:
+        return intructions()
 
 
 def main():
     """
     function to call all functions
     """
-    player = get_user_name()
+    get_user_name()
     print("Please enter the input of the desired option \n")
     print("The input needs to be a number between 1 and 3 \n")
     print("1.start Game")
