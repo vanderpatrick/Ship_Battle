@@ -5,7 +5,7 @@ def get_user_name():
     """
     Function to get username from player
     """
-    player = input("Welcome to ShipBattle what is your name soldier ?: \n")
+    player = input("Welcome to ShipBattle what is your name soldier ? \n")
     try:
         return get_user_name_validation(player)
     except ValueError as error:
@@ -143,7 +143,7 @@ def start_game():
         if call_ships is True:
             while True:
                 try:
-                    orientation = input("enter orientation (H or V)").upper()
+                    orientation = input("enter orientation (H or V): ").upper()
                     if orientation == "H" or orientation == "V":
                         break
                 except TypeError:
@@ -216,12 +216,11 @@ def start_game():
             elif board[row][column] == "X":
                 turns(board)
             elif player_field[row][column] == "X":
-                board[row][column] == "X"
+                board[row][column] = "X"
             else:
                 board[row][column] = "-"
 
     call_ships(computer_field)
-    call_board(computer_field)
     call_board(player_field)
     call_ships(player_field)
 
@@ -233,7 +232,7 @@ def start_game():
             break
         if count_hits(player_guess) == 17:
             print("Good Work soldier.")
-            print("theyare all dead, i see you in the next battle.")
+            print("they are all dead, i see you in the next battle.")
             return main()
 
         while True:
