@@ -19,7 +19,7 @@ def get_user_name_validation(player):
     """
     parsed = player
     if (parsed.isalpha()) is False:
-        raise ValueError(f"Soldier {player} is not a real name in this army")
+        raise ValueError(f"Soldier. {player} is not a real name in this navy.")
     return parsed
 
 
@@ -50,7 +50,7 @@ def input_validation(user_input):
 
 def start_game():
     """
-    Function that start game.
+    Function that starts the game.
     """
     ship_size = [2, 3, 3, 4, 5]
     player_field = [[" "] * 8 for i in range(8)]
@@ -61,6 +61,9 @@ def start_game():
                            'E': 4, 'F': 5, 'G': 6, 'H': 7}
 
     def call_board(board):
+        """
+        Function to generate and display the board
+        """
         print('  A B C D E F G H')
         print('  ---------------')
         row_number = 1
@@ -69,6 +72,9 @@ def start_game():
             row_number += 1
 
     def call_ships(board):
+        """
+        Function to make ships for the computer and for player
+        """
         for ships_length in ship_size:
             while True:
                 if board == computer_field:
@@ -87,7 +93,7 @@ def start_game():
                             break
                 else:
                     call_ships = True
-                    print(f'Place the shipwith a length of {ships_length}')
+                    print(f'Place the ship with a length of {ships_length}')
                     row, column, orientation = player_call(call_ships)
                     if check_ship_size(ships_length, row, column, orientation):
                         if check_overlap(board, row, column,
@@ -102,6 +108,9 @@ def start_game():
                             break
 
     def check_ship_size(ships_length, row, column, orientation):
+        """
+        Function to check if the size of the ship is valid
+        """
         if orientation == "H":
             if column + ships_length > 8:
                 return False
@@ -114,6 +123,9 @@ def start_game():
                 return True
 
     def check_overlap(board, row, column, orientation, ships_length):
+        """
+        Function to check if ships dont overlap the board
+        """
         if orientation == 'H':
             for i in range(column, column + ships_length):
                 if board[row][i] == "X":
@@ -125,6 +137,9 @@ def start_game():
         return False
 
     def player_call(call_ships):
+        """
+        Function to call ships to the board and to call where to hit
+        """
         if call_ships is True:
             while True:
                 try:
@@ -148,17 +163,17 @@ def start_game():
                         column = letters_translation[column]
                         break
                 except KeyError:
-                    print('enter a valid letter between A_H')
+                    print('enter a valid letter between A_H ')
             return row, column, orientation
         else:
             while True:
                 try:
-                    row = input("Enter the row 1-8 of the ship")
+                    row = input("Enter the row 1-8 of the ship: ")
                     if row in '12345678':
                         row = int(row) - 1
                         break
                 except ValueError:
-                    print('enter a valid letter between 1-8')
+                    print('enter a valid letter between 1-8 ')
             while True:
                 try:
                     column = input('Enter the column of the ship: ').upper()
@@ -166,10 +181,13 @@ def start_game():
                         column = letters_translation[column]
                         break
                 except KeyError:
-                    print('Enter a valid letter between A-H')
+                    print('Enter a valid letter between A-H: ')
             return row, column
 
     def count_hits(board):
+        """
+        Function to call ship hits
+        """
         count = 0
         for row in board:
             for column in row:
@@ -178,6 +196,9 @@ def start_game():
         return count
 
     def turns(board):
+        """
+        Function to change turns when hit or miss
+        """
         if board == player_guess:
             row, column = player_call(player_guess)
             if board[row][column] == '-':
@@ -211,7 +232,7 @@ def start_game():
             turns(player_guess)
             break
         if count_hits(player_guess) == 17:
-            print("you win!")
+            print("Good Work soldier they are all dead, i see you in the next battle.")
             return main()
 
         while True:
@@ -219,7 +240,7 @@ def start_game():
             break
         call_board(computer_guess)
         if count_hits(computer_guess) == 17:
-            print('sorry you lost')
+            print('You have failed me and your nation, soldier.')
             return main()
 
 
@@ -227,9 +248,9 @@ def intructions():
     """
     Function that show user the instructions
     """
-    print("some istructures")
-    print("some istructures")
-    print("some istructures\n")
+    print("1.Position your ships horizontaly and or vertical.")
+    print("2.Guess a row and a column acording to the map.")
+    print("3.You win if all enemy ships are sunk.\n")
     print("1.Start Game")
     print("2.Credits \n")
     user_input = get_user_input()
@@ -243,8 +264,9 @@ def credits_for_user():
     """
     function that shows user the credits
     """
-    print('made by patrick\n')
-    print('1.Start Game ')
+    print('It was just awesome to make this project, i hope you liked the game.\n')
+    print('made by Patrick Alexander Lucas Van Der Flier\n')
+    print('1.Start Game')
     print('2.Instructions \n')
     user_input = get_user_input()
     if user_input == 1:
