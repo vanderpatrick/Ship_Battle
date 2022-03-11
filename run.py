@@ -5,7 +5,7 @@ def get_user_name():
     """
     Function to get username from player
     """
-    player = input("Welcome to ShipBattle what is your name soldier ? \n")
+    player = input("Welcome to Ship Battle what is your name soldier ? \n")
     try:
         return get_user_name_validation(player)
     except ValueError as error:
