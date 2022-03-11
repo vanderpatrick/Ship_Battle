@@ -1,7 +1,6 @@
 import random
 
 
-
 def get_user_name():
     """
     Function to get username from player
@@ -12,6 +11,7 @@ def get_user_name():
     except ValueError as error:
         print(f"Invalid input {error}, try again.")
         get_user_name()
+
 
 def get_user_name_validation(player):
     """
@@ -57,7 +57,8 @@ def start_game():
     computer_field = [[" "] * 8 for i in range(8)]
     player_guess = [[" "] * 8 for i in range(8)]
     computer_guess = [[" "] * 8 for i in range(8)]
-    letters_translation = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7}
+    letters_translation = {'A': 0, 'B': 1, 'C': 2, 'D': 3,
+                           'E': 4, 'F': 5, 'G': 6, 'H': 7}
 
     def call_board(board):
         print('  A B C D E F G H')
@@ -75,7 +76,8 @@ def start_game():
                     row = random.randint(0, 7)
                     column = random.randint(0, 7)
                     if check_ship_size(ships_length, row, column, orientation):
-                        if check_overlap(board, row, column, orientation, ships_length) is False:
+                        if check_overlap(board, row, column,
+                                         orientation, ships_length) is False:
                             if orientation == "H":
                                 for i in range(column, column + ships_length):
                                     board[row][i] = "X"
@@ -88,7 +90,8 @@ def start_game():
                     print(f'Place the shipwith a length of {ships_length}')
                     row, column, orientation = player_call(call_ships)
                     if check_ship_size(ships_length, row, column, orientation):
-                        if check_overlap(board, row, column, orientation, ships_length) is False:
+                        if check_overlap(board, row, column,
+                                         orientation, ships_length) is False:
                             if orientation == 'H':
                                 for i in range(column, column + ships_length):
                                     board[row][i] = "X"
@@ -209,7 +212,7 @@ def start_game():
             break
         if count_hits(player_guess) == 17:
             print("you win!")
-            break
+            return main()
 
         while True:
             turns(computer_guess)
@@ -217,7 +220,7 @@ def start_game():
         call_board(computer_guess)
         if count_hits(computer_guess) == 17:
             print('sorry you lost')
-            break
+            return main()
 
 
 def intructions():
@@ -254,7 +257,7 @@ def main():
     """
     function to call all functions
     """
-    get_user_name()
+    player = get_user_name()
     print("Please enter the input of the desired option \n")
     print("The input needs to be a number between 1 and 3 \n")
     print("1.start Game")
