@@ -227,11 +227,11 @@ def intructions():
     print("some istructures")
     print("some istructures")
     print("some istructures\n")
-    print("1.main menu")
-    print("2.Start Game")
+    print("1.Start Game")
+    print("2.Credits \n")
     user_input = get_user_input()
     if user_input == 1:
-        return main()
+        return credits_for_user()
     if user_input == 2:
         return start_game()
 
@@ -241,11 +241,11 @@ def credits_for_user():
     function that shows user the credits
     """
     print('made by patrick\n')
-    print('1.Main menu')
-    print('2.Start Game')
+    print('1.Start Game ')
+    print('2.Instructions \n')
     user_input = get_user_input()
     if user_input == 1:
-        return main()
+        return intructions()
     if user_input == 2:
         return start_game()
 
@@ -254,8 +254,8 @@ def main():
     """
     function to call all functions
     """
-    player = get_user_name()
-    print(f"Please {player} enter the input of the desired option\n")
+    get_user_name()
+    print("Please enter the input of the desired option \n")
     print("The input needs to be a number between 1 and 3 \n")
     print("1.start Game")
     print("2.Instructions")
