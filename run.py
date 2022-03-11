@@ -1,14 +1,26 @@
 import random
 
-import random
 
 
 def get_user_name():
     """
     Function to get username from player
     """
-    player = input("Welcome to ShipBattle what is your name soldier ?: ")
-    return player
+    player = input("Welcome to ShipBattle what is your name soldier ?: \n")
+    try:
+        return get_user_name_validation(player)
+    except ValueError as error:
+        print(f"Invalid input {error}, try again.")
+        get_user_name()
+
+def get_user_name_validation(player):
+    """
+    validates username
+    """
+    parsed = player
+    if (parsed.isalpha()) is False:
+        raise ValueError(f"Soldier {player} is not a real name in this army")
+    return parsed
 
 
 def get_user_input():
