@@ -59,24 +59,24 @@ The Features were designed to be as simple as possible since is a terminal game 
   - Type error value error and key error were used to check if the expected input was the right input.
 
  # Test Validators :
-  - Passed through PEP8 validation whitout any issues
+  - Passed through PEP8 validation without any issues
   ![Image of PEP8 validation](/images/pep_8_foto.png)
 
 # Deployment :
-  - This project was deployd to Heroku follow the steps bellow to deploy.
-  - 1.Create an Heroku account
-  - 2.Click on create new app
-  - 3.Give the app an name of your chosing
-  - 4.Pick your region.
-  - 5.configure the settings the way it fits for your project
-  - 6.pick a deployment method.
-  - 7.look for your repository name
-  - 8.Click search and click connect
-  - 9.pick between manual or automatic deployment
-  - 10.click on link to see your project link
+  - This project was deployed to Heroku follow the steps below to deploy.
+  - 1. Create a Heroku account
+  - 2. Click on create a new app
+  - 3. Give the app a name of your choosing
+  - 4. Pick your region.
+  - 5. configure the settings the way it fits your project
+  - 6. pick a deployment method.
+  - 7. look for your repository name
+  - 8. Click search and click connect
+  - 9. pick between manual or automatic deployment
+  - 10. Click on the link to see your project link
 
   # Credits :
-  - https://pythondex.com/python-battleship-game - for helping me understand the logic of a battleship game in python
+  - https://pythondex.com/python-battleship-game - for helping me understand the logic of a battleship game in Python
 
   - https://www.youtube.com/c/KnowledgeMavens1 - for being a stepping stone to build this project
  
